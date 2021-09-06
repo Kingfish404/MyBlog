@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="post">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+        <p class="post-date">
+            {{ page.date | date_to_string }}
+            {% if page.author %}
+            -
+            {{ page.author }}
+            {% endif %}
+        </p>
+        {% for tag in page.tags %}
+        <span class="tag">
+            <a href="{{ site.baseurl }}{{ site.data.nav[2].url }}#{{ tag }}">{{ tag }}</a>
+        </span>
+        {% endfor %}
+    </div>
+    {{ content }}
+    <a id="to_top" href="#" rel="internal">
+        <svg t="1616419756836" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="2185">
+            <path
+                d="M496.896 305.2544l-383.76448 383.76448a35.82976 35.82976 0 1 0 50.67776 50.67776l358.42048-358.42048 358.42048 358.42048a35.82976 35.82976 0 1 0 50.67776-50.67776l-383.76448-383.76448c-7.00416-7.00416-16.15872-10.496-25.344-10.496s-18.31936 3.50208-25.32352 10.496z"
+                fill="#515151" p-id="2186"></path>
+        </svg>
+    </a>
+    {% include gitalk.html %}
+    <script>
+        var to_top = document.getElementById('to_top');
+        var html = document.getElementsByTagName('html')[0];
+        function scrollToTop() {
+            var scrollTop = html.scrollTop;
+            var contentHeight = html.scrollHeight;
+            var height = html.clientHeight;
+            if (scrollTop + height > contentHeight / 5) {
+                to_top.style.bottom = '30px';
+            } else {
+                to_top.style.bottom = '-200%';
+            }
+        };
+        document.addEventListener('scroll', scrollToTop);
+    </script>
+</div>

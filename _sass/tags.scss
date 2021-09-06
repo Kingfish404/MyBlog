@@ -1,0 +1,73 @@
+.post{
+    .tag{
+        float: right;
+        margin:0.375em 0.25em;
+        -webkit-user-select: none;
+        user-select: none;
+        line-height: 1.5em;
+        padding: 0 1em;
+        background-color: rgba(128, 128, 128, 0.11);
+        border-radius: 0.25em;
+        display: unset;
+        font-family: "Times New Roman", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+
+        @include mobile{
+            float: left;
+        }
+    }
+}
+
+.tags{
+    .tag-list{
+        list-style: none;
+        padding: 0;
+        -webkit-user-select: none;
+        user-select: none;
+        
+        li{
+            display: inline-block;
+            margin: 0.25em;
+            min-width: 5em;
+            -webkit-user-select: none;
+            user-select: none;
+            line-height: 2em;
+            height: 2em;
+            padding: 0 0 0 0.5em;
+            background-color: rgba(128, 128, 128, 0.11);
+            border-radius: 0.25em;
+        }
+
+        a{
+            color: black;
+        }
+        
+        .tag-name{
+            padding-right: 1em;
+        }
+
+        .tag-size{
+            min-width: 2em;
+            text-align: center;
+            float: right;
+            margin: auto;
+            border-left: 1px solid rgba(128,128,128,0.11);
+        }
+    }
+
+    .tag-item{
+        display: none;
+    }
+
+    .tag-item:target{
+        display: unset;
+    }
+    
+    .tag-time{
+        float: right;
+    }
+    
+    a{
+        color: #0031a7;
+        text-decoration: none;
+    }
+}
